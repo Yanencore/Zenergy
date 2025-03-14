@@ -1,3 +1,30 @@
 <resources>
-    <string name="app_name">Powerhome</string>
+    <string-array name="country">
+        <item>+33</item>
+        <item>+1</item>
+        <item>+44</item>
+        <item>+49</item>
+    </string-array>
+    <string name="app_name">Zenergy</string>
+    <string name="hello">Bonjour</string>
+    <string name="identify">Identifiez-vous</string>
+    <string name="phone">Téléphone</string>
+    <string name="create_account">Créer un compte</string>
+    <string name="first_name">Prénom</string>
+    <string name="last_name">Nom</string>
+    <string name="email">E-mail</string>
+    <string name="password">Mot de passe</string>
+    <string name="login">Connexion</string>
+    <string name="forgot_password">Mot de passe oublié ?</string>
+    <string name="new_here">Nouveau sur Zenergy ?</string>
+    <string name="sign_up">CRÉEZ UN COMPTE</string>
+    <string name="or">OU</string>
+    <string name="continue_facebook">Continuer avec Facebook</string>
+    <string name="ajouter_un_habitant">Ajouter un habitant</string>
+    <string name="liste_des_habitants">Liste des habitants</string>
+    <string name="learn_app">application d\'apprentissage</string>
+    <string name="first_item" />
+    <string name="second_item" />
+
+
 </resources>
