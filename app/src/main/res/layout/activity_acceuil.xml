@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:padding="20dp"
     android:gravity="center"
-    android:background="@android:color/white">
+    android:background="@color/background">
 
 
     <ImageView
@@ -15,7 +15,7 @@
         android:layout_height="178dp"
         android:layout_marginBottom="20dp"
         android:contentDescription="Logo"
-        android:src="@drawable/fas" />
+        android:src="@drawable/logo" />
 
 
     <TextView
@@ -25,7 +25,7 @@
         android:text="Bienvenue sur Zenergy !"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:textColor="#F44336"
+        android:textColor="@color/h1"
         android:layout_marginBottom="20dp"/>
 
 
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:text="Accédez à vos fonctionnalités"
         android:textSize="16sp"
-        android:textColor="#666666"
+        android:textColor="@color/smallTxt"
         android:layout_marginBottom="30dp"/>
 
 
@@ -44,7 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Voir mon profil"
-        android:backgroundTint="#2F2881"
+        android:backgroundTint="@color/greenBtn"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:layout_marginBottom="10dp"/>
@@ -55,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Paramètres"
-        android:backgroundTint="#00AAB4"
+        android:backgroundTint="@color/greenBtn"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:layout_marginBottom="10dp"/>
@@ -66,7 +66,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Se déconnecter"
-        android:backgroundTint="#E95437"
+        android:backgroundTint="@color/RedBtn"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:layout_marginBottom="20dp"/>

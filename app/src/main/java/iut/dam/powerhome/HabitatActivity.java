@@ -1,9 +1,13 @@
 package iut.dam.powerhome;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 import java.util.ArrayList;
@@ -14,6 +18,8 @@ public class HabitatActivity extends Activity {
     private ListView listView;
     private HabitatAdapter adapter;
     private List<Habitat> habitants;
+
+    private static final String TAG = "HabitatActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,18 @@ public class HabitatActivity extends Activity {
         int ic_clim = R.drawable.ic_clim;
         int ic_laundry = R.drawable.ic_laundry;
         int ic_iron = R.drawable.ic_iron;
+
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageView ivBack = findViewById(R.id.ivBack);
+        if (ivBack == null) {
+            Log.e(TAG, "Erreur : ivBack est null, vérifie son ID dans activity_register.xml");
+        } else {
+            ivBack.setOnClickListener(v -> {
+                Log.d(TAG, "Retour à LoginActivity");
+                Intent intent = new Intent(HabitatActivity.this, AccueilActivity.class);
+                startActivity(intent);
+                finish();
+            });
+        }
 
         // Ajouter des habitants avec équipements
         habitants.add(new Habitat("Gaëtan Leclair", 4, 1, Arrays.asList(ic_laundry, ic_cleaner, ic_clim, ic_iron)));

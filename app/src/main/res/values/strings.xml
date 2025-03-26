@@ -25,6 +25,7 @@
     <string name="learn_app">application d\'apprentissage</string>
     <string name="first_item" />
     <string name="second_item" />
+    <string name="continuer_avec_google">Continuer avec Google</string>
 
 
 </resources>

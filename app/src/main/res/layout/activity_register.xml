@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="24dp"
-    android:background="@android:color/white"
+    android:background="#28684A"
     tools:context=".RegisterActivity">
 
     <ImageView
@@ -182,7 +182,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/country"
-            android:backgroundTint="#FF6B59" />
+            android:backgroundTint="@color/black" />
         <EditText
             android:id="@+id/etPhone"
             android:layout_width="match_parent"
@@ -199,7 +199,7 @@
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:backgroundTint="#F78C27"
+        android:backgroundTint="@color/greenBtn"
         android:text="@string/create_account"
         android:textColor="@android:color/white"
         android:textStyle="bold" />

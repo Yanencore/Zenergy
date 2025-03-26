@@ -5,4 +5,9 @@
     <color name="base">#FAFAFA</color>
     <color name="green">#0A990B</color>
     <color name="dark_blue">#3B6A97</color>
+    <color name="background">#0D1512</color>
+    <color name="greenBtn">#20573E</color>
+    <color name="RedBtn">#4E1511</color>
+    <color name="h1">#B1F1CB</color>
+    <color name="smallTxt">#666666</color>
 </resources>

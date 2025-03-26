@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:padding="20dp"
     android:background="@android:color/white"
-    android:backgroundTint="#DDFFF8"
+    android:backgroundTint="@color/background"
     tools:context=".LoginActivity">
 
     <ImageView
@@ -18,14 +18,14 @@
         android:layout_height="250dp"
         android:layout_marginTop="100dp"
         android:scaleType="fitCenter"
-        android:src="@drawable/fas" />
+        android:src="@drawable/logo" />
 
     <TextView
         android:id="@+id/textLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Zenergy"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="22sp"
         android:textStyle="bold"
         android:layout_marginTop="20dp" />
