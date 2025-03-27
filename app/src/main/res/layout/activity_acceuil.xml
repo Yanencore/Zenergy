@@ -33,9 +33,9 @@
         android:id="@+id/tvSubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
         android:text="Accédez à vos fonctionnalités"
         android:textSize="16sp"
-        android:textColor="@color/smallTxt"
         android:layout_marginBottom="30dp"/>
 
 

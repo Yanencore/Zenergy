@@ -29,7 +29,7 @@ public class AccueilActivity extends AppCompatActivity {
         if (username != null) {
             tvWelcome.setText("Bienvenue, " + username + " !\nVotre mot de passe est : " + password);
         } else {
-            tvWelcome.setText("Bienvenue sur PowerHome !");
+            tvWelcome.setText("Bienvenue sur votre profil !");
         }
 
 
@@ -46,7 +46,7 @@ public class AccueilActivity extends AppCompatActivity {
             }
         });
 
-        Button btnSettings = findViewById(R.id.btnSettings);
+        Button btnSettings = findViewById(R.id.btnProfile);
         btnSettings.setOnClickListener(new View.OnClickListener() {
 
             @Override
