@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -13,6 +14,7 @@ import com.koushikdutta.ion.Response;
 
 import java.util.ArrayList;
 import java.util.List;
+
 public class HabitatActivity extends Activity {
     private ListView listView;
     private HabitatAdapter adapter;
@@ -27,6 +29,8 @@ public class HabitatActivity extends Activity {
         setContentView(R.layout.activity_habitat);
 
         listView = findViewById(R.id.listViewHabitats);
+        ImageView ivBack = findViewById(R.id.ivBack); // Récupération du bouton retour
+        ivBack.setOnClickListener(v -> finish()); // Action pour revenir à la page précédente
 
         // Initialisation de la progressDialog
         pDialog = new ProgressDialog(this);

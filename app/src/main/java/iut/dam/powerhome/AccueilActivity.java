@@ -1,5 +1,6 @@
 package iut.dam.powerhome;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -46,13 +47,23 @@ public class AccueilActivity extends AppCompatActivity {
             }
         });
 
-        Button btnSettings = findViewById(R.id.btnProfile);
-        btnSettings.setOnClickListener(new View.OnClickListener() {
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button imglistes = findViewById(R.id.btnliste);
+        imglistes.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "Ouverture de HabitatActivity");
                 Intent intent = new Intent(AccueilActivity.this, HabitatActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button profil = findViewById(R.id.btnProfile);
+        profil.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "Ouverture de HabitatActivity");
+                Intent intent = new Intent(AccueilActivity.this, HabitatSoloActivity.class);
                 startActivity(intent);
             }
         });

@@ -8,6 +8,15 @@
     android:gravity="center"
     android:background="@color/background">
 
+    <Button
+        android:id="@+id/btnliste"
+        android:layout_width="46dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="160dp"
+        android:text="La liste tout les habitants"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/greenBtn"
+        />
 
     <ImageView
         android:id="@+id/imgLogo"
@@ -16,7 +25,6 @@
         android:layout_marginBottom="20dp"
         android:contentDescription="Logo"
         android:src="@drawable/logo" />
-
 
     <TextView
         android:id="@+id/tvWelcome"

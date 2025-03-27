@@ -38,7 +38,10 @@
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light">
         </activity>
-
+        <activity
+            android:name=".HabitatSoloActivity"
+            android:exported="false">
+        </activity>
     </application>
 
 </manifest>
