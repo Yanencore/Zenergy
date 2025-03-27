@@ -1,35 +1,36 @@
 package iut.dam.powerhome;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import java.util.List;
+import java.util.Objects;
 
 public class HabitatAdapter extends BaseAdapter {
     private Context context;
-    private List<Habitat> habitants;
+    private List<Habitat> habitatList;
     private LayoutInflater inflater;
 
-    public HabitatAdapter(Context context, List<Habitat> habitants) {
+    // Constructor
+    public HabitatAdapter(Context context, List<Habitat> habitatList) {
         this.context = context;
-        this.habitants = habitants;
+        this.habitatList = habitatList;
         this.inflater = LayoutInflater.from(context);
     }
 
     @Override
     public int getCount() {
-        return habitants.size();
+        return habitatList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return habitants.get(position);
+        return habitatList.get(position);
     }
 
     @Override
@@ -37,31 +38,57 @@ public class HabitatAdapter extends BaseAdapter {
         return position;
     }
 
-    @SuppressLint("SetTextI18n")
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        // Reusing convertView to improve performance
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.item_habitat, parent, false);
         }
 
-        TextView nomTextView = convertView.findViewById(R.id.nomResident);
-        TextView equipementsTextView = convertView.findViewById(R.id.nbEquipements);
-        TextView etageTextView = convertView.findViewById(R.id.etage);
-        LinearLayout equipementsLayout = convertView.findViewById(R.id.equipementsLayout);
+        // Get the current habitat object
+        Habitat habitat = habitatList.get(position);
 
-        Habitat habitat = habitants.get(position);
-        nomTextView.setText(habitat.getNom());
-        equipementsTextView.setText(habitat.getNbEquipements() + (habitat.getNbEquipements() > 1 ? " équipements" : " équipement"));
-        etageTextView.setText("" + habitat.getEtage());
+        // Initialize views
+        TextView nomResident = convertView.findViewById(R.id.nomResident);
+        TextView nbEquipements = convertView.findViewById(R.id.nbEquipements);
+        TextView etage = convertView.findViewById(R.id.etage);
 
-        equipementsLayout.removeAllViews();
-        for (int icon : habitat.getEquipementsIcons()) {
-            ImageView imageView = new ImageView(context);
-            imageView.setImageResource(icon);
-            imageView.setLayoutParams(new LinearLayout.LayoutParams(60, 60));
-            equipementsLayout.addView(imageView);
+        // Set the name of the resident
+        nomResident.setText(habitat.getResidentName());
+
+        // Set the number of appliances
+        nbEquipements.setText(habitat.getAppliances().size() + " appareils");
+
+        // Set the floor number
+        etage.setText(String.valueOf(habitat.getEtage()));
+
+        // Clear previous equipment icons
+        ImageView icone1 = convertView.findViewById(R.id.icone1);
+        ImageView icone2 = convertView.findViewById(R.id.icone2);
+        ImageView icone3 = convertView.findViewById(R.id.icone3);
+        ImageView icone4 = convertView.findViewById(R.id.icone4);
+        ImageView[] icons = new ImageView[]{icone1, icone2, icone3, icone4};
+
+        // Initialize icon visibility
+        for (int i = 0; i < icons.length; i++) {
+            if (i >= habitat.getAppliances().size()) {
+                icons[i].setVisibility(View.GONE);  // Hide icons that are not used
+            } else {
+                icons[i].setVisibility(View.VISIBLE);  // Show icons that are used
+                String applianceName = habitat.getAppliances().get(i).getName();
+
+                // Set the corresponding icon based on appliance name
+                if (Objects.equals(applianceName, "Machine a laver")) {
+                    icons[i].setImageResource(R.drawable.ic_laundry);
+                } else if (Objects.equals(applianceName, "Aspirateur")) {
+                    icons[i].setImageResource(R.drawable.ic_cleaner);
+                } else if (Objects.equals(applianceName, "climatiseur")) {
+                    icons[i].setImageResource(R.drawable.ic_clim);
+                } else if (Objects.equals(applianceName, "Fer a repasser")) {
+                    icons[i].setImageResource(R.drawable.ic_iron);
+                }
+            }
         }
-
         return convertView;
     }
 }
