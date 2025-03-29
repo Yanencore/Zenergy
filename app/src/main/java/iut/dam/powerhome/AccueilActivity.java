@@ -20,11 +20,12 @@ public class AccueilActivity extends AppCompatActivity {
 
         Log.d(TAG, "Lancement de AccueilActivity");
 
-
         Intent intent = getIntent();
         String username = intent.getStringExtra("USERNAME");
         String password = intent.getStringExtra("PASSWORD");
 
+        // Récupérer l'email du Bundle
+        String email = intent.getStringExtra("user_email");
 
         TextView tvWelcome = findViewById(R.id.tvWelcome);
         if (username != null) {
@@ -32,7 +33,6 @@ public class AccueilActivity extends AppCompatActivity {
         } else {
             tvWelcome.setText("Bienvenue sur votre profil !");
         }
-
 
         Button btnLogout = findViewById(R.id.btnLogout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -57,16 +57,19 @@ public class AccueilActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         Button profil = findViewById(R.id.btnProfile);
         profil.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "Ouverture de HabitatActivity");
-                Intent intent = new Intent(AccueilActivity.this, HabitatSoloActivity.class);
+                Log.d(TAG, "Ouverture de ProfilActivity");
+
+                // Passer l'email à ProfilActivity via Intent
+                Intent intent = new Intent(AccueilActivity.this, ProfilActivity.class);
+                intent.putExtra("user_email", email); // Ajoute l'email au bundle
                 startActivity(intent);
             }
         });
-
     }
 }

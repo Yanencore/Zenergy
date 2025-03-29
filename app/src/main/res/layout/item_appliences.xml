@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <!-- Icone de l'appareil sans image par défaut -->
+    <ImageView
+        android:id="@+id/applianceIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="10dp" />
+
+    <!-- Informations sur l'appareil -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <!-- Nom de l'appareil -->
+        <TextView
+            android:id="@+id/applianceName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nom de l'appareil"
+            android:textSize="16sp"
+            android:textColor="#000000" /> <!-- Couleur du texte -->
+
+        <!-- Consommation de l'appareil -->
+        <TextView
+            android:id="@+id/applianceWattage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Consommation"
+            android:textSize="14sp"
+            android:textColor="@color/black" /> <!-- Couleur moins vive pour la consommation -->
+    </LinearLayout>
+</LinearLayout>
