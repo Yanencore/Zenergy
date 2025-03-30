@@ -30,4 +30,7 @@
     <string name="param_tres">Settings</string>
     <string name="se_d_connecter">Log out</string>
     <string name="calendrier_de_consommation">Consumption calendar</string>
+    <string name="r_server_un_cr_neau">Reserve a slot</string>
+    <string name="date_s_lectionn_e">Date selected</string>
+    <string name="r_server">Book now</string>
 </resources>

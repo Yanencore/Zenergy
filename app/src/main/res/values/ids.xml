@@ -6,4 +6,5 @@
     <item name="btnReserver" type="id" />
     <item name="spinnerHeure" type="id" />
     <item name="spinnerEquipement" type="id" />
+    <item name="txtDate" type="id" />
 </resources>

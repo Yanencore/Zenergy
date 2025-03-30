@@ -30,4 +30,7 @@
     <string name="create_account">Crear una cuenta</string>
     <string name="first_name">Apellidos</string>
     <string name="last_name">Nombre</string>
+    <string name="r_server_un_cr_neau">Reservar una franja horaria</string>
+    <string name="date_s_lectionn_e">Fecha seleccionada</string>
+    <string name="r_server">Reserve</string>
 </resources>

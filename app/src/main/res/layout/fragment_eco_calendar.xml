@@ -25,9 +25,10 @@
         android:text="@string/calendrier_de_consommation"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:textColor="@color/white"
         android:layout_gravity="center"
-        android:paddingBottom="12dp"
-        android:paddingTop="50dp"/>
+        android:paddingBottom="25dp"
+        android:paddingTop="25dp"/>
 
     <CalendarView
         android:id="@+id/calendarView"

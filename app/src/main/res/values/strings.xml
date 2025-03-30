@@ -40,6 +40,8 @@
     <string name="se_d_connecter">Se déconnecter</string>
     <string name="calendrier_de_consommation">Calendrier de consommation</string>
     <string name="r_server_un_cr_neau">Réserver un créneau</string>
+    <string name="date_s_lectionn_e">Date sélectionnée</string>
+    <string name="r_server">Réserver</string>
 
 
 </resources>
