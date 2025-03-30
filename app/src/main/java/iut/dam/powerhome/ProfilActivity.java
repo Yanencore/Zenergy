@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -60,6 +61,9 @@ public class ProfilActivity extends AppCompatActivity {
 
         // Afficher les informations actuelles du profil
         loadProfile();
+
+        Button ivBack = findViewById(R.id.btnRetour); // Récupération du bouton retour
+        ivBack.setOnClickListener(v -> finish()); // Action pour revenir à la page précédente
     }
 
     // Méthode pour charger le profil depuis la base de données ou le serveur
@@ -74,7 +78,7 @@ public class ProfilActivity extends AppCompatActivity {
             return;
         }
 
-        String urlString = preferences.getString("serverAddress", "http://192.168.1.250") + "/powerhome/getHabitatFromEmail.php?email=" + emailConnection;
+        String urlString = preferences.getString("serverAddress", Config.SERVER_IP) + "/powerhome/getHabitatFromEmail.php?email=" + emailConnection;
         Log.d(TAG, "URL de la requête : " + urlString);
 
         Ion.with(this)

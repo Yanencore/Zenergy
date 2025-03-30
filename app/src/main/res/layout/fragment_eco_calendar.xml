@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/background"> <!-- fond clair -->
+
+
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:padding="6dp"
+        android:src="@drawable/fleche"
+        android:contentDescription="@string/retour"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <TextView
+        android:id="@+id/textTitre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calendrier_de_consommation"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:paddingBottom="12dp"
+        android:paddingTop="50dp"/>
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:background="@color/background2"
+        android:elevation="4dp"
+        android:padding="8dp" />
+
+    <Button
+        android:id="@+id/btnReserver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/r_server_un_cr_neau"
+        android:backgroundTint="@color/greenBtn"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>
+

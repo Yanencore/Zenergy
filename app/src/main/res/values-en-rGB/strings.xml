@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Zenergy</string>
+    <string name="hello">Hello</string>
+    <string name="identify">Log in</string>
+    <string name="phone">Phone</string>
+    <string name="create_account">Créer un compte</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="password">Password</string>
+    <string name="login">Connection</string>
+    <string name="forgot_password">Forgot your password?</string>
+    <string name="new_here">New to Zenergy?</string>
+    <string name="sign_up">CREATE ACCOUNT</string>
+    <string name="or">OR</string>
+    <string name="continue_facebook">Continue with Facebook</string>
+    <string name="ajouter_un_habitant">Add a resident</string>
+    <string name="liste_des_habitants">Inhabitants list</string>
+    <string name="learn_app">learning application</string>
+    <string name="continuer_avec_google">Continue with Google</string>
+    <string name="chargement">Loading...</string>
+    <string name="adresse_email">Email address</string>
+    <string name="mes_quipements">My equipments</string>
+    <string name="ma_consommation_totale">Total consumption :</string>
+    <string name="retour">Back</string>
+    <string name="la_liste_tout_les_habitants">List of all residents</string>
+    <string name="bienvenue_sur_zenergy">Welcome to Zenergy!</string>
+    <string name="acc_dez_vos_fonctionnalit_s">Access your functionalities</string>
+    <string name="voir_mon_profil">View my profile</string>
+    <string name="param_tres">Settings</string>
+    <string name="se_d_connecter">Log out</string>
+    <string name="calendrier_de_consommation">Consumption calendar</string>
+</resources>

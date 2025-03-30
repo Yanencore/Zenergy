@@ -13,11 +13,17 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".ReservationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EcoCalendarActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -28,24 +34,21 @@
             android:exported="false" />
         <activity
             android:name=".AccueilActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-        </activity>
-        <activity android:name=".HabitatActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HabitatActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light">
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light" />
         <activity
             android:name=".HabitatSoloActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".ProfilActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
+
     </application>
 
 </manifest>

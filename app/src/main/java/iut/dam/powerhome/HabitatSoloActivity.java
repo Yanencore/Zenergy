@@ -61,7 +61,7 @@ public class HabitatSoloActivity extends Activity {
 
     private void getUserHabitat(String token) {
         pDialog.show();
-        String url = "http://192.168.1.250/powerhome/gethabitat2.php?token=" + token;
+        String url = Config.SERVER_IP + "/powerhome/gethabitat2.php?token=" + token;
 
         Log.d(TAG, "URL de la requête : " + url);
 

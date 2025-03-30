@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -71,5 +72,35 @@ public class AccueilActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button btnListe = findViewById(R.id.btnliste);
+        btnListe.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "Ouverture de HabitatActivity");
+
+                // Passer l'email à ProfilActivity via Intent
+                Intent intent = new Intent(AccueilActivity.this, HabitatActivity.class);
+                intent.putExtra("user_email", email); // Ajoute l'email au bundle
+                startActivity(intent);
+            }
+        });
+
+        // Bouton vers le calendrier éco
+        Button btnEcoCalendar = findViewById(R.id.btnEcoCalendar);
+        btnEcoCalendar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "Ouverture de EcoCalanderActivity");
+
+                // Passer l'email à ProfilActivity via Intent
+                Intent intent = new Intent(AccueilActivity.this, EcoCalendarActivity.class);
+                intent.putExtra("user_email", email); // Ajoute l'email au bundle
+                startActivity(intent);
+            }
+        });
+
     }
 }

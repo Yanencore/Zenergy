@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#158b00"
+    android:background="@color/background2"
     android:padding="16dp">
 
     <!-- Section Profil -->
@@ -13,12 +13,12 @@
         android:orientation="vertical"
         android:background="@android:color/white"
         android:padding="8dp"
-        android:layout_marginBottom="16dp">
+        android:layout_marginTop="25dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nom"
+            android:text="@string/last_name"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -26,13 +26,13 @@
             android:id="@+id/tvNom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chargement..."
+            android:text="@string/chargement"
             android:textSize="16sp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Prénom"
+            android:text="@string/first_name"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -40,13 +40,13 @@
             android:id="@+id/tvPrenom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chargement..."
+            android:text="@string/chargement"
             android:textSize="16sp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Adresse email"
+            android:text="@string/adresse_email"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -54,7 +54,7 @@
             android:id="@+id/tvEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chargement..."
+            android:text="@string/chargement"
             android:textSize="16sp"/>
     </LinearLayout>
 
@@ -62,7 +62,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mes équipements"
+        android:text="@string/mes_quipements"
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -88,7 +88,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ma consommation totale :"
+            android:text="@string/ma_consommation_totale"
             android:textSize="18sp"
             android:textStyle="bold"
             android:gravity="center"
@@ -98,7 +98,7 @@
             android:id="@+id/tvConsoTotale"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Chargement..."
+            android:text="@string/chargement"
             android:textSize="20sp"
             android:textStyle="bold"
             android:gravity="center"
@@ -118,16 +118,11 @@
             android:id="@+id/btnRetour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Retour"
+            android:text="@string/retour"
+            android:backgroundTint="@color/greenBtn"
             android:textSize="16sp"
             android:layout_marginEnd="16dp"/>
 
-        <!-- Bouton vide pour l'instant -->
-        <Button
-            android:id="@+id/btnVide"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""/>
     </LinearLayout>
 
 </LinearLayout>

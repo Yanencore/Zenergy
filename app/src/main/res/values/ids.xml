@@ -3,4 +3,7 @@
     <item name="btnAction" type="id" />
     <item name="tvWelcome" type="id" />
     <item name="btnLogout" type="id" />
+    <item name="btnReserver" type="id" />
+    <item name="spinnerHeure" type="id" />
+    <item name="spinnerEquipement" type="id" />
 </resources>

@@ -52,7 +52,7 @@ public class HabitatActivity extends Activity {
     public void getRemoteHabitats() {
         pDialog.show();
 
-        String urlString = "http://192.168.1.250/powerhome/getHabitats_v2.php?token=6a81470661821d7ff232962aded97c41";
+        String urlString = Config.SERVER_IP + "/powerhome/getHabitats_v2.php?token=6a81470661821d7ff232962aded97c41";
         Ion.with(this)
                 .load(urlString)
                 .asString()

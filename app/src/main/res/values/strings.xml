@@ -12,7 +12,7 @@
     <string name="create_account">Créer un compte</string>
     <string name="first_name">Prénom</string>
     <string name="last_name">Nom</string>
-    <string name="email">E-mail</string>
+    <string name="email" translatable="false">E-mail</string>
     <string name="password">Mot de passe</string>
     <string name="login">Connexion</string>
     <string name="forgot_password">Mot de passe oublié ?</string>
@@ -23,9 +23,23 @@
     <string name="ajouter_un_habitant">Ajouter un habitant</string>
     <string name="liste_des_habitants">Liste des habitants</string>
     <string name="learn_app">application d\'apprentissage</string>
-    <string name="first_item" />
-    <string name="second_item" />
+    <string name="first_item" translatable="false" />
+    <string name="second_item" translatable="false" />
     <string name="continuer_avec_google">Continuer avec Google</string>
+    <string name="chargement">Chargement...</string>
+    <string name="adresse_email">Adresse email</string>
+    <string name="mes_quipements">Mes équipements</string>
+    <string name="ma_consommation_totale">Ma consommation totale :</string>
+    <string name="retour">Retour</string>
+    <string name="la_liste_tout_les_habitants">La liste de tous les habitants</string>
+    <string name="logo" translatable="false">Logo</string>
+    <string name="bienvenue_sur_zenergy">Bienvenue sur Zenergy !</string>
+    <string name="acc_dez_vos_fonctionnalit_s">Accédez à vos fonctionnalités</string>
+    <string name="voir_mon_profil">Voir mon profil</string>
+    <string name="param_tres">Paramètres</string>
+    <string name="se_d_connecter">Se déconnecter</string>
+    <string name="calendrier_de_consommation">Calendrier de consommation</string>
+    <string name="r_server_un_cr_neau">Réserver un créneau</string>
 
 
 </resources>
