@@ -27,7 +27,6 @@ public class HabitatSoloActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_habitat);
 
-        // Initialisation des vues
         nomResident = findViewById(R.id.nomResident);
         nbEquipements = findViewById(R.id.nbEquipements);
         etage = findViewById(R.id.etage);
@@ -36,13 +35,11 @@ public class HabitatSoloActivity extends Activity {
         icone3 = findViewById(R.id.icone3);
         icone4 = findViewById(R.id.icone4);
 
-        // ProgressDialog pour afficher le chargement
         pDialog = new ProgressDialog(this);
         pDialog.setMessage("Chargement des données...");
         pDialog.setIndeterminate(true);
         pDialog.setCancelable(false);
 
-        // Récupérer le token de l'utilisateur
         SharedPreferences preferences = getSharedPreferences("Settings", MODE_PRIVATE);
         String token = preferences.getString("token", "");
 
@@ -55,7 +52,6 @@ public class HabitatSoloActivity extends Activity {
             return;
         }
 
-        // Charger les données du compte connecté
         getUserHabitat(token);
     }
 
@@ -101,7 +97,6 @@ public class HabitatSoloActivity extends Activity {
 
             Log.d(TAG, "Habitat trouvé : " + residentName + ", Étage : " + etageVal);
 
-            // Mise à jour de l'interface utilisateur
             updateUI(residentName, nbEquipementsVal, etageVal, appliancesArray);
 
         } catch (Exception e) {
@@ -115,13 +110,11 @@ public class HabitatSoloActivity extends Activity {
         nbEquipements.setText(nbEquipementsVal + " appareils");
         etage.setText("Étage : " + etageVal);
 
-        // Initialiser toutes les icônes comme invisibles
         ImageView[] icons = {icone1, icone2, icone3, icone4};
         for (ImageView icon : icons) {
             icon.setVisibility(ImageView.GONE);
         }
 
-        // Vérification des équipements
         if (appliancesArray != null) {
             int count = Math.min(appliancesArray.length(), icons.length);
             for (int i = 0; i < count; i++) {

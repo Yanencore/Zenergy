@@ -29,26 +29,22 @@ public class HabitatActivity extends Activity {
         setContentView(R.layout.activity_habitat);
 
         listView = findViewById(R.id.listViewHabitats);
-        ImageView ivBack = findViewById(R.id.ivBack); // Récupération du bouton retour
-        ivBack.setOnClickListener(v -> finish()); // Action pour revenir à la page précédente
+        ImageView ivBack = findViewById(R.id.ivBack);
+        ivBack.setOnClickListener(v -> finish());
 
-        // Initialisation de la progressDialog
         pDialog = new ProgressDialog(this);
         pDialog.setMessage("Getting list of habitats...");
         pDialog.setIndeterminate(true);
         pDialog.setCancelable(false);
 
-        // Appel pour récupérer les habitats depuis le serveur
         getRemoteHabitats();
 
-        // Action lors d'un clic sur un élément de la liste
         listView.setOnItemClickListener((parent, view, position, id) -> {
             Habitat habitat = habitants.get(position);
             Toast.makeText(HabitatActivity.this, "Résident: " + habitat.getResidentName(), Toast.LENGTH_SHORT).show();
         });
     }
 
-    // Méthode pour récupérer les habitats depuis le serveur
     public void getRemoteHabitats() {
         pDialog.show();
 
@@ -69,25 +65,21 @@ public class HabitatActivity extends Activity {
                         String json = result.getResult();
                         Log.d(TAG, "Réponse JSON reçue : " + json);
 
-                        // Parse les données JSON en une liste d'habitats
                         habitants.clear();
                         habitants.addAll(Habitat.getListFromJson(json));
 
-                        // Affichage dans le log de chaque habitat récupéré
                         for (Habitat h : habitants) {
                             Log.d(TAG, "Habitat récupéré : residentName: " + h.getResidentName() + ", Étage: " + h.getEtage() + ", Equipements: " + h.getNbEquipements());
                         }
 
-                        // Initialiser l'adaptateur avec la liste des habitants
                         initializeAdapter();
                     }
                 });
     }
 
-    // Méthode pour initialiser l'adaptateur
     private void initializeAdapter() {
         if (!isAdapterInitialized && !habitants.isEmpty()) {
-            adapter = new HabitatAdapter(this, habitants);  // Utilisation de l'adaptateur mis à jour
+            adapter = new HabitatAdapter(this, habitants);
             listView.setAdapter(adapter);
             isAdapterInitialized = true;
         } else if (isAdapterInitialized) {

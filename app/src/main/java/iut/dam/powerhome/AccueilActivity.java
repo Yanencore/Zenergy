@@ -25,7 +25,7 @@ public class AccueilActivity extends AppCompatActivity {
         String username = intent.getStringExtra("USERNAME");
         String password = intent.getStringExtra("PASSWORD");
 
-        // Récupérer l'email du Bundle
+        // Récup l'email du Bundle
         String email = intent.getStringExtra("user_email");
 
         TextView tvWelcome = findViewById(R.id.tvWelcome);
@@ -42,9 +42,9 @@ public class AccueilActivity extends AppCompatActivity {
                 Log.d(TAG, "Déconnexion de l'utilisateur");
 
                 Intent intent = new Intent(AccueilActivity.this, SplashActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Efface l'historique des activités
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
-                finish(); // Ferme l'activité actuelle
+                finish();
             }
         });
 
@@ -68,7 +68,7 @@ public class AccueilActivity extends AppCompatActivity {
 
                 // Passer l'email à ProfilActivity via Intent
                 Intent intent = new Intent(AccueilActivity.this, ProfilActivity.class);
-                intent.putExtra("user_email", email); // Ajoute l'email au bundle
+                intent.putExtra("user_email", email);
                 startActivity(intent);
             }
         });
@@ -82,7 +82,7 @@ public class AccueilActivity extends AppCompatActivity {
 
                 // Passer l'email à ProfilActivity via Intent
                 Intent intent = new Intent(AccueilActivity.this, HabitatActivity.class);
-                intent.putExtra("user_email", email); // Ajoute l'email au bundle
+                intent.putExtra("user_email", email);
                 startActivity(intent);
             }
         });
@@ -97,7 +97,7 @@ public class AccueilActivity extends AppCompatActivity {
 
                 // Passer l'email à ProfilActivity via Intent
                 Intent intent = new Intent(AccueilActivity.this, EcoCalendarActivity.class);
-                intent.putExtra("user_email", email); // Ajoute l'email au bundle
+                intent.putExtra("user_email", email);
                 startActivity(intent);
             }
         });

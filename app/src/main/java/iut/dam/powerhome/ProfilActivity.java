@@ -28,10 +28,10 @@ public class ProfilActivity extends AppCompatActivity {
     private static final String TAG = "ProfilActivity";
     private SharedPreferences preferences;
     private ProgressDialog pDialog;
-    private TextView etName, etEmail, etPrenom, etConsoTotale;  // Ajout de TextView pour la consommation totale
-    private List<Appliance> appliances;  // Liste pour stocker les équipements
+    private TextView etName, etEmail, etPrenom, etConsoTotale;
+    private List<Appliance> appliances;
     private ListView appliancesListView;
-    private ApplianceAdapter applianceAdapter;  // L'adaptateur pour la liste des équipements
+    private ApplianceAdapter applianceAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,30 +43,27 @@ public class ProfilActivity extends AppCompatActivity {
         etName = findViewById(R.id.tvNom);
         etPrenom = findViewById(R.id.tvPrenom);
         etEmail = findViewById(R.id.tvEmail);
-        etConsoTotale = findViewById(R.id.tvConsoTotale);  // Initialisation du TextView pour la consommation totale
+        etConsoTotale = findViewById(R.id.tvConsoTotale);
 
-        // Initialisation du ProgressDialog
         pDialog = new ProgressDialog(this);
         pDialog.setMessage("Chargement des informations...");
         pDialog.setIndeterminate(true);
         pDialog.setCancelable(false);
 
-        // Initialiser la liste des équipements
         appliances = new ArrayList<>();
 
-        // Initialiser la ListView
         appliancesListView = findViewById(R.id.lvAppliances);
         applianceAdapter = new ApplianceAdapter(this, appliances);
         appliancesListView.setAdapter(applianceAdapter);
 
-        // Afficher les informations actuelles du profil
+
         loadProfile();
 
-        Button ivBack = findViewById(R.id.btnRetour); // Récupération du bouton retour
-        ivBack.setOnClickListener(v -> finish()); // Action pour revenir à la page précédente
+        Button ivBack = findViewById(R.id.btnRetour);
+        ivBack.setOnClickListener(v -> finish());
     }
 
-    // Méthode pour charger le profil depuis la base de données ou le serveur
+
     private void loadProfile() {
         pDialog.show();
 
@@ -115,26 +112,25 @@ public class ProfilActivity extends AppCompatActivity {
                                 return;
                             }
 
-                            // Extraction des données de l'utilisateur
+
                             JSONObject user = jsonResponse.getJSONObject("user");
                             String firstName = user.getString("firstName");
                             String lastName = user.getString("lastName");
                             String email = user.getString("email");
 
-                            // Mise à jour des TextView avec les données extraites
                             etName.setText(lastName);
                             etPrenom.setText(firstName);
                             etEmail.setText(email);
 
-                            // Vérification et récupération des équipements
+
                             if (jsonResponse.has("appliances")) {
                                 JSONArray appliancesJsonArray = jsonResponse.getJSONArray("appliances");
 
-                                // Nettoyer la liste avant de la remplir
-                                appliances.clear();
-                                int totalWattage = 0;  // Variable pour accumuler la consommation totale
 
-                                // Ajouter les équipements à la liste et calculer la consommation totale
+                                appliances.clear();
+                                int totalWattage = 0;
+
+
                                 for (int i = 0; i < appliancesJsonArray.length(); i++) {
                                     JSONObject applianceJson = appliancesJsonArray.getJSONObject(i);
                                     String id = applianceJson.getString("id");
@@ -142,18 +138,18 @@ public class ProfilActivity extends AppCompatActivity {
                                     String reference = applianceJson.getString("reference");
                                     String wattage = applianceJson.getString("wattage");
 
-                                    // Créer un objet Appliance et l'ajouter à la liste
+
                                     Appliance appliance = new Appliance(id, name, reference, wattage);
                                     appliances.add(appliance);
 
-                                    // Ajouter la puissance à la consommation totale
+
                                     totalWattage += Integer.parseInt(wattage);
                                 }
 
-                                // Mettre à jour l'adaptateur avec les nouveaux équipements
+
                                 applianceAdapter.notifyDataSetChanged();
 
-                                // Afficher la consommation totale
+
                                 etConsoTotale.setText("Consommation Totale : " + totalWattage + " W");
 
                             } else {

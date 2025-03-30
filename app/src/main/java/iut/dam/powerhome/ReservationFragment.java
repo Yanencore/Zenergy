@@ -73,9 +73,9 @@ public class ReservationFragment extends Fragment {
                         }
 
                         if (result.contains("success")) {
-                            Toast.makeText(getContext(), "Réservation réussie ✅", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "Réservation réussie ", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(getContext(), "Échec ❌ : " + result, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "Échec  : " + result, Toast.LENGTH_SHORT).show();
                         }
                     });
         });
@@ -98,7 +98,7 @@ public class ReservationFragment extends Fragment {
                 .asString()
                 .setCallback((e, result) -> {
                     if (e != null) {
-                        Toast.makeText(getContext(), "Erreur chargement équipements ❌", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Erreur chargement équipements ", Toast.LENGTH_SHORT).show();
                         return;
                     }
 
@@ -113,7 +113,7 @@ public class ReservationFragment extends Fragment {
                         spinnerEquipement.setAdapter(adapter);
 
                     } catch (Exception ex) {
-                        Toast.makeText(getContext(), "Erreur parsing JSON", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Erreur JSON", Toast.LENGTH_SHORT).show();
                     }
                 });
     }

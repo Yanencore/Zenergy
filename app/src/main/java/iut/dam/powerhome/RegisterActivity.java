@@ -34,7 +34,6 @@ public class RegisterActivity extends AppCompatActivity {
         EditText etPassword = findViewById(R.id.etPassword);
         Button btnRegister = findViewById(R.id.btnRegister);
 
-        // Code PAYS
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.country,
@@ -42,7 +41,6 @@ public class RegisterActivity extends AppCompatActivity {
         );
         spinnerCountryCode.setAdapter(adapter);
 
-        // Choix PAYS
         spinnerCountryCode.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -67,7 +65,6 @@ public class RegisterActivity extends AppCompatActivity {
             });
         }
 
-        // Validation
         btnRegister.setOnClickListener(v -> {
             String username = etPrenom.getText().toString().trim();
             String nom = etNom.getText().toString().trim();
@@ -76,7 +73,6 @@ public class RegisterActivity extends AppCompatActivity {
             String phone = etPhone.getText().toString().trim();
             String countryCode = spinnerCountryCode.getSelectedItem().toString();
 
-            // Fusionner le code pays avec le numéro
             String fullPhone = countryCode + " " + phone;
 
             // VERIFICATION

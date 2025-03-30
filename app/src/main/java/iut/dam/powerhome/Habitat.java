@@ -21,19 +21,17 @@ public class Habitat {
     @SerializedName("appliances")
     private List<Appliance> appliances;
 
-    // Ajouter un champ name si nécessaire
     @SerializedName("residentName")
     private String residentName;
 
     public Habitat(String id, String name, int etage, String area, List<Appliance> appliances) {
         this.id = id;
-        this.residentName = (name != null && !name.isEmpty()) ? name : "Nom non défini";  // Valeur par défaut
+        this.residentName = (name != null && !name.isEmpty()) ? name : "Nom non défini";
         this.etage = etage;
         this.area = area;
         this.appliances = appliances != null ? appliances : new ArrayList<>();
     }
 
-    // Getter pour name
     public String getResidentName() {
         return residentName;
     }
@@ -44,10 +42,6 @@ public class Habitat {
 
     public int getEtage() {
         return etage;
-    }
-
-    public String getArea() {
-        return area;
     }
 
     public List<Appliance> getAppliances() {

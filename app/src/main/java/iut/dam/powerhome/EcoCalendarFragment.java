@@ -41,10 +41,9 @@ public class EcoCalendarFragment extends Fragment {
 
         userEmail = getActivity().getIntent().getStringExtra("user_email");
 
-        // Init avec la date du jour
         selectedDate = formatDate(calendarView.getDate());
 
-        // Clic sur une date du calendrier
+
         calendarView.setOnDateChangeListener((view, year, month, dayOfMonth) -> {
             selectedDate = String.format(Locale.getDefault(), "%04d-%02d-%02d", year, month + 1, dayOfMonth);
 
@@ -61,7 +60,7 @@ public class EcoCalendarFragment extends Fragment {
             }
         });
 
-        // Clic bouton Réserver
+
         btnReserver.setOnClickListener(v -> {
             if (selectedDate == null || userEmail == null) {
                 Toast.makeText(getContext(), "Données manquantes", Toast.LENGTH_SHORT).show();
@@ -83,7 +82,7 @@ public class EcoCalendarFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        loadCalendarData(); // 🔁 Recharge les données du calendrier
+        loadCalendarData();
     }
 
     private void loadCalendarData() {

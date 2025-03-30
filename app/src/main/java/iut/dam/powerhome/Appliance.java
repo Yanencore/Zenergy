@@ -30,11 +30,6 @@ public class Appliance {
     public String getName() {
         return name;
     }
-
-    public String getReference() {
-        return reference;
-    }
-
     public String getWattage() {
         return wattage;
     }

@@ -42,19 +42,18 @@ public class ApplianceAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.item_appliences, parent, false);
         }
 
-        // Get the appliance object
+
         Appliance appliance = applianceList.get(position);
 
-        // Initialize views
+
         TextView applianceName = convertView.findViewById(R.id.applianceName);
         TextView applianceWattage = convertView.findViewById(R.id.applianceWattage);
         ImageView applianceIcon = convertView.findViewById(R.id.applianceIcon);
 
-        // Set the appliance name and wattage
+
         applianceName.setText(appliance.getName());
         applianceWattage.setText(appliance.getWattage() + "W");
 
-        // Set the corresponding icon based on appliance name
         switch (appliance.getName()) {
             case "Machine a laver":
                 applianceIcon.setImageResource(R.drawable.ic_laundry);

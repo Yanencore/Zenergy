@@ -129,18 +129,15 @@ public class LoginActivity extends AppCompatActivity {
                         if (!response.equals("\"incorrect email or password !\"")) {
                             Toast.makeText(LoginActivity.this, "Connexion réussie", Toast.LENGTH_SHORT).show();
 
-                            // Récupérer l'email saisi par l'utilisateur
+
                             String email = etIdentifiant.getText().toString().trim();
 
-                            // Crée un Bundle pour passer l'email à l'activité suivante
                             Intent intent = new Intent(LoginActivity.this, AccueilActivity.class);
                             Bundle bundle = new Bundle();
                             bundle.putString("user_email", email); // Ajoute l'email saisi au bundle
 
-                            // Ajoute le bundle à l'intent
                             intent.putExtras(bundle);
 
-                            // Démarre l'activité AccueilActivity
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
                             finish();

@@ -8,7 +8,7 @@ public class EcoCalendarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eco_calendar); // Appelle le layout XML
+        setContentView(R.layout.activity_eco_calendar);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
